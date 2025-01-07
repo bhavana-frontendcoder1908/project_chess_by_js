@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Chess Game</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('ch1.jpg') no-repeat center center fixed;
+            background-size: cover; /* Fullscreen background image */
+            overflow: hidden;
+            animation: backgroundAnimation 10s infinite alternate; /* Background animation */
+        }
+
+        /* Background animation for interactive feel */
+        @keyframes backgroundAnimation {
+            0% {
+                background-position: center center;
+            }
+            100% {
+                background-position: center bottom;
+            }
+        }
+
+        /* Semi-transparent overlay */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent layer */
+            z-index: 1;
+        }
+
+        /* Start Button Styling */
+        .start-btn {
+            z-index: 2;
+            background: #d3b094; /* Classic wood background color */
+            border: 2px solid #5e4d3d; /* Dark brown border */
+            padding: 18px 40px;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 8px;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+            font-family: 'Georgia', serif; /* Elegant font for a classic touch */
+        }
+
+        /* Hover effect */
+        .start-btn:hover {
+            background: #a67c52; /* Slightly darker wood color */
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        /* Active effect for pressed button */
+        .start-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Focus effect for accessibility */
+        .start-btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(193, 158, 121, 0.6); /* Goldish glow */
+        }
+
+        /* Pulse animation on focus */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .start-btn:focus {
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        /* Optional chess piece icon */
+        .start-btn::before {
+            content: "♞"; /* Knight chess piece */
+            font-size: 30px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="overlay">
+
+        <center>
+         <h1 style="font-size: 100px; color: white;">ꉓꃅꍟꌗꌗ ꁅꍏꎭꍟ</h1>
+        </center><br><br>
+
+    </div>
+    <button class="start-btn" id="startButton">Start Game</button>
+
+    <script>
+        document.getElementById("startButton").addEventListener("click", function() {
+            // alert("Starting the Chess game...");
+            window.open("chess.html","_self")
+            // You can replace this with actual game initialization code
+        });
+    </script>
+
+</body>
+</html>
